@@ -68,7 +68,7 @@ function gameOver() {
   $("body").addClass("game-over");
   setTimeout(() => {
     $("body").removeClass("game-over");
-  }, 200);
+  }, 300);
   if (screen.width < 600) {
     $("#level-title").text("Game Over, Tap Anywhere to Start");
   } else {

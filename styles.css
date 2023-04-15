@@ -26,7 +26,7 @@ body {
 }
 
 .game-over {
-  background-color: red;
+  background-color: red !important;
   opacity: 0.8;
 }
 
