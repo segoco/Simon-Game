@@ -3,14 +3,20 @@ const buttonColours = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 let level = 0;
-// 1. Start Game
+// Change title on mobile
+if (screen.width < 600) {
+  $("#level-title").text("Tap Anywhere to Start");
+}
+// 1. Start game on desktop
 $(document).keypress(() => {
-  if (gamePattern.length === 0) {
-    updateLevel();
-    nextSequence();
-  }
+  startGame();
 });
-$(".btn").click((event) => {
+// 1.1 tart game on mobile
+$(document).on("touchstart", () => {
+  startGame();
+});
+// 1.2. Button Click
+$(".pushBtn").click((event) => {
   if (level > 0) {
     const userChosenColour = event.target.id;
     userClickedPattern.push(userChosenColour);
@@ -63,7 +69,11 @@ function gameOver() {
   setTimeout(() => {
     $("body").removeClass("game-over");
   }, 200);
-  $("#level-title").text("Game Over, Press Any Key to Restart");
+  if (screen.width < 600) {
+    $("#level-title").text("Game Over, Tap Anywhere to Start");
+  } else {
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+  }
   startOver();
 }
 // 7. Start Over
@@ -75,4 +85,11 @@ function startOver() {
 // 8. Update Level
 function updateLevel() {
   $("#level-title").text("Level " + level);
+}
+// 9. Start Game
+function startGame() {
+  if (gamePattern.length === 0) {
+    updateLevel();
+    nextSequence();
+  }
 }

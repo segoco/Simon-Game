@@ -6,21 +6,25 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
   </head>
 
   <body>
-    <h1 id="level-title">Press Any Key to Start</h1>
+    <h1 id="level-title" class="text-center">Press Any Key to Start</h1>
     <div class="container">
       <div lass="row">
-        <div type="button" id="green" class="btn green"></div>
-        <div type="button" id="red" class="btn red"></div>
+        <div type="button" id="green" class="pushBtn rounded-left green"></div>
+        <div type="button" id="red" class="pushBtn red"></div>
       </div>
       <div class="row">
-        <div type="button" id="yellow" class="btn yellow"></div>
-        <div type="button" id="blue" class="btn blue"></div>
+        <div type="button" id="yellow" class="pushBtn yellow"></div>
+        <div type="button" id="blue" class="pushBtn blue"></div>
       </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="game.js" charset="utf-8"></script>
   </body>
 </html>
